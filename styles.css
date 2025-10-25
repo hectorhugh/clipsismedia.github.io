@@ -1,12 +1,9 @@
-/* ------------------------------
-   VARIABLES DE COLOR Y BASE
---------------------------------*/
 :root {
   --gold: #C9A44B;
   --white: #ffffff;
   --black: #0b0b0b;
-  --green: #25D366; /* verde oficial WhatsApp */
-  --blue: #1877F2;  /* azul oficial Facebook */
+  --green: #25D366;
+  --blue: #1877F2;
 }
 
 * {
@@ -19,376 +16,169 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: var(--black);
   color: var(--white);
-  overflow-x: hidden;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* ------------------------------
-   HERO PRINCIPAL (FONDO)
---------------------------------*/
-#hero {
-  background: url('gal1.jpg') center/cover no-repeat;
-}
-
+/* HERO */
 #hero {
   position: relative;
   height: 100vh;
-  background-image: image-set(
-  url('gal1-low.jpg') 1x,
-  url('gal1.jpg') 2x
+  background: url('gal1.JPG') center/cover no-repeat black;
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
 .hero-text {
-  z-index: 2;
   color: var(--gold);
-  padding: 0 1rem;
+  padding: 1rem;
+  animation: fadeZoom 1.2s ease;
 }
 
 .hero-logo {
-  max-width: 280px;
+  max-width: 250px;
   width: 80%;
   margin-bottom: 1rem;
-  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.8));
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
 }
 
 .hero-text p {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
 }
 
-/* ------------------------------
-   BOTONES GENERALES
---------------------------------*/
+/* BOTONES */
 .btn {
-  background-color: var(--gold);
-  color: var(--black);
-  padding: 0.9rem 2rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  font-size: 1rem;
-}
-
-.btn i {
-  margin-right: 8px;
-  font-size: 1.2rem;
-  vertical-align: middle;
-}
-
-/* Botón WhatsApp */
-.btn.whatsapp {
-  background-color: var(--green);
-  color: white;
-}
-
-.btn.whatsapp:hover {
-  background-color: #1EBE5D;
-}
-
-/* Botón Facebook */
-.btn.facebook {
-  background-color: var(--blue);
-  color: white;
-}
-
-.btn.facebook:hover {
-  background-color: #1459B8;
-}
-
-/* Botón Instagram */
-.btn.instagram {
-  background: radial-gradient(circle at 30% 107%, 
-    #fdf497 0%, 
-    #fdf497 5%, 
-    #fd5949 45%, 
-    #d6249f 60%, 
-    #285AEB 90%);
-  color: white;
-  border: none;
+  padding: 0.8rem 2rem;
+  margin: 0.4rem;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--white);
   transition: all 0.3s ease;
+  gap: 8px;
 }
 
-.btn.instagram:hover {
-  filter: brightness(1.1);
-  transform: translateY(-3px);
+.btn i { font-size: 1.2rem; }
+
+/* Botones individuales */
+.btn.whatsapp { background: var(--green); }
+.btn.whatsapp:hover { filter: brightness(1.2); }
+
+.btn.facebook { background: var(--blue); }
+.btn.facebook:hover { filter: brightness(1.2); }
+
+.btn.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
+.btn.instagram:hover { filter: brightness(1.2); }
 
-
-/* ------------------------------
-   LOGO SUPERIOR
---------------------------------*/
+/* LOGO SUPERIOR */
 .site-header {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 15px;
+  left: 15px;
   z-index: 1000;
 }
-
 .site-logo {
-  max-width: 120px;
-  height: auto;
-  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.6));
+  max-width: 100px;
   transition: transform 0.3s ease;
 }
+.site-logo:hover { transform: scale(1.05); }
 
-.site-logo:hover {
-  transform: scale(1.05);
-}
-
-/* ------------------------------
-   SELLO DE SITIO VERIFICADO FIJO
---------------------------------*/
+/* SELLO VERIFICADO */
 .verified-badge-fixed {
   position: fixed;
   top: 15px;
   right: 15px;
-  background: rgba(255, 255, 255, 0.1);
   color: var(--gold);
   font-weight: bold;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   padding: 6px 10px;
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
   backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  z-index: 9999;
-  animation: verified-glow 3s infinite ease-in-out;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
+.verified-badge-fixed i { color: #00ff88; }
 
-.verified-badge-fixed i {
-  color: #00ff88;
-}
-
-@keyframes verified-glow {
-  0%, 100% { box-shadow: 0 0 10px rgba(0, 255, 136, 0.3); }
-  50% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.6); }
-}
-
-/* ------------------------------
-   SECCIÓN DE SERVICIOS
---------------------------------*/
+/* SERVICIOS */
 #servicios {
-  padding: 3rem 1.5rem;
   text-align: center;
+  padding: 3rem 1.5rem;
 }
-
 #servicios h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
   color: var(--gold);
+  margin-bottom: 1.5rem;
 }
-
 .cards {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
-
 .card {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  width: 90%;
+  padding: 1.5rem;
   max-width: 300px;
   transition: transform 0.3s;
 }
+.card:hover { transform: translateY(-8px); }
+.card h3 { color: var(--gold); }
 
-.card:hover {
-  transform: translateY(-10px);
-}
-
-.card h3 {
-  color: var(--gold);
-  margin-bottom: 1rem;
-}
-
-/* ------------------------------
-   GALERÍA
---------------------------------*/
+/* GALERÍA */
 #galeria {
-  padding: 3rem 1.5rem;
   text-align: center;
+  padding: 3rem 1.5rem;
 }
-
-#galeria h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: var(--gold);
-}
-
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
-
 .grid img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 10px;
   transition: transform 0.3s;
 }
+.grid img:hover { transform: scale(1.05); }
 
-.grid img:hover {
-  transform: scale(1.05);
-}
-
-/* ------------------------------
-   CONTACTO
---------------------------------*/
-#contacto {
+/* QUIÉNES SOMOS */
+#nosotros {
   padding: 3rem 1.5rem;
   text-align: center;
+  background: rgba(255, 255, 255, 0.03);
 }
-
-#contacto h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: var(--gold);
-}
-
-#contacto .btn {
-  margin: 0.6rem;
-  width: 80%;
-  max-width: 300px;
-}
-
-/* ------------------------------
-   EFECTOS SUAVES (scroll y botones)
---------------------------------*/
-#servicios .card,
-#galeria img,
-#contacto .btn {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-#servicios .card.visible,
-#galeria img.visible,
-#contacto .btn.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
-  70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
-}
-
-.btn.pulse {
-  animation: pulse 1.5s infinite;
-}
-
-/* ------------------------------
-   RESPONSIVE (mejora móvil)
---------------------------------*/
-@media (min-width: 768px) {
-  .cards {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-
-  #contacto .btn {
-    width: auto;
-  }
-
-  #servicios h2, #galeria h2, #contacto h2 {
-    font-size: 2.5rem;
-  }
-}
-
-/* ------------------------------
-   SECCIÓN QUIÉNES SOMOS
---------------------------------*/
-#nosotros {
-  padding: 4rem 1.5rem;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.03);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 #nosotros h2 {
-  font-size: 2rem;
   color: var(--gold);
   margin-bottom: 1.5rem;
 }
-
 #nosotros p {
   max-width: 700px;
   margin: 0 auto;
-  line-height: 1.7;
-  font-size: 1rem;
+  line-height: 1.6;
   color: var(--white);
-  opacity: 0.9;
-  text-align: justify;
 }
+.resaltar { color: var(--gold); }
 
-#nosotros .resaltar {
-  color: var(--gold);
-  font-weight: 600;
+/* CONTACTO */
+#contacto {
+  text-align: center;
+  padding: 3rem 1rem;
 }
-/* ------------------------------
-   ANIMACIÓN DE ENTRADA
---------------------------------*/
+#contacto h2 { color: var(--gold); margin-bottom: 1rem; }
+
+/* ANIMACIONES */
 @keyframes fadeZoom {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
 }
-
-.hero-logo,
-.hero-text p,
-#contacto .btn {
-  animation: fadeZoom 1s ease forwards;
-  opacity: 0;
-}
-
-.hero-logo {
-  animation-delay: 0.3s;
-}
-
-.hero-text p {
-  animation-delay: 0.6s;
-}
-
-#contacto .btn:nth-child(2) {
-  animation-delay: 0.9s;
-}
-#contacto .btn:nth-child(3) {
-  animation-delay: 1.2s;
-}
-#contacto .btn:nth-child(4) {
-  animation-delay: 1.5s;
-}
-
-/* Aparecen al cargar */
-body.loaded .hero-logo,
-body.loaded .hero-text p,
-body.loaded #contacto .btn {
-  opacity: 1;
-}
-
