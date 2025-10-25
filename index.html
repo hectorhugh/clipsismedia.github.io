@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Clipsis Media</title>
+
+  <!-- estilos -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Font Awesome (íconos) -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous"
+    referrerpolicy="no-referrer"
   />
 </head>
-
 <body>
+
+  <!-- CARGA / OVERLAY -->
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader-inner">
+      <img src="logo.png" alt="Logo" class="loader-logo" />
+      <div class="loader-text">Clipsis Media</div>
+    </div>
+  </div>
+
   <!-- Encabezado -->
   <header class="site-header">
     <img src="logo.png" alt="Logotipo de Clipsis Media" class="site-logo" />
   </header>
 
-  <!-- Sello verificado -->
-  <div class="verified-badge-fixed">
-    <i class="fa-solid fa-circle-check"></i> Sitio verificado
+  <!-- Sello verificado fijo -->
+  <div class="verified-badge-fixed" aria-hidden="false">
+    <i class="fa-solid fa-circle-check"></i>
+    Sitio verificado
   </div>
 
-  <!-- Hero principal -->
-  <section id="hero">
+  <!-- HERO -->
+  <section id="hero" role="banner">
     <div class="hero-text">
       <img src="logo.png" alt="Logo Clipsis Media" class="hero-logo" />
       <p>Fotografía y Video Profesional</p>
     </div>
   </section>
 
-  <!-- Servicios -->
+  <!-- SERVICIOS -->
   <section id="servicios">
     <h2>Servicios</h2>
     <div class="cards">
@@ -39,61 +53,96 @@
         <h3>Bodas, XV Años e Infantiles</h3>
         <p>Capturamos y guardamos tus momentos, tanto digitales como impresos en foto y video.</p>
       </div>
+
       <div class="card">
         <h3>Eventos</h3>
-        <p>Producción audiovisual para eventos sociales, masivos y empresariales.</p>
+        <p>audiovisual para eventos sociales, masivos y empresariales.</p>
       </div>
+
       <div class="card">
         <h3>Publicidad</h3>
         <p>Contenido visual y diseño para redes sociales, negocios y páginas web.</p>
       </div>
+
+      <div class="card">
+        <h3>Posadas y Fiestas Infantiles</h3>
+        <p>Paquetes desde <strong>1 hasta 5 horas</strong>. Cobertura en foto y video, ideal para eventos familiares y celebraciones de temporada.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Galería -->
+  <!-- GALERÍA (todas tus imágenes, mantenidas) -->
   <section id="galeria">
     <h2>Galería</h2>
     <div class="grid">
-      <img src="gal1.JPG" alt="Ejemplo de fotografía 1" />
-      <img src="gal2.JPG" alt="Ejemplo de fotografía 2" />
-      <img src="gal3.png" alt="Ejemplo de fotografía 3" />
-      <img src="gal4.png" alt="Ejemplo de fotografía 4" />
+      <img src="gal0.JPG" alt="foto 0">
+      <img src="gal1.jpg" alt="foto 1">
+      <img src="gal2.JPG" alt="foto 2">
+      <img src="gal3.png" alt="foto 3">
+      <img src="gal4.png" alt="foto 4">
+      <img src="gal5.jpg" alt="foto 5">
+      <img src="gal6.JPG" alt="foto 6">
+      <img src="gal7.jpg" alt="foto 7">
+      <img src="gal8.JPG" alt="foto 8">
+      <img src="gal9.jpg" alt="foto 9">
+      <img src="gal10.JPG" alt="foto 10">
+      <img src="gal11.JPG" alt="foto 11">
+      <img src="gal12.JPG" alt="foto 12">
+      <img src="gal13.JPG" alt="foto 13">
+      <img src="gal14.JPG" alt="foto 14">
+      <img src="gal15.png" alt="foto 15">
+      <img src="gal16.png" alt="foto 16">
+      <img src="gal17.jpg" alt="foto 17">
+      <img src="gal18.JPG" alt="foto 18">
     </div>
   </section>
 
-  <!-- Quiénes somos -->
+  <!-- QUIÉNES SOMOS -->
   <section id="nosotros">
     <h2>Quiénes Somos</h2>
     <p>
-      Somos un negocio <span class="resaltar">100% regiomontano</span>, creado de manera amigable y familiar,
+      Somos un negocio <span class="resaltar">100% regiomontano</span>, creado de una manera amigable y familiar,
       nacido en <span class="resaltar">2023</span> con la idea de ser el primer negocio de foto y video accesible
-      para toda familia o empresa.  
-      <br><br>
-      Queremos que todos tengan <span class="resaltar">calidad en sus imágenes</span> — ya sea recuerdos o proyectos.
-      <br><br>
-      La <span class="resaltar">honestidad</span> y el <span class="resaltar">tiempo</span> son valores clave para nosotros.
-      <br><br>
+      para toda familia o empresa. <br><br>
+      Buscamos que todos tengan <span class="resaltar">calidad en sus imágenes</span>, ya sea para recuerdos personales
+      o para mostrar proyectos. La <span class="resaltar">honestidad</span> y el <span class="resaltar">tiempo</span> son
+      factores importantes para nosotros. <br><br>
       <strong>Clipsis Media</strong>
     </p>
   </section>
 
-  <!-- Contacto -->
+  <!-- CONTACTO -->
   <section id="contacto">
     <h2>Contacto</h2>
 
-    <a href="https://wa.me/528111692699?text=Quiero%20información%20para%20mi%20evento"
-       class="btn whatsapp" target="_blank">
-       <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    <a
+      href="https://wa.me/528111692699?text=Quiero%20información%20para%20mi%20evento"
+      class="btn whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+      WhatsApp
     </a>
 
-    <a href="https://www.facebook.com/profile.php?id=61575551395089"
-       class="btn facebook" target="_blank">
-       <i class="fa-brands fa-facebook-f"></i> Facebook
+    <a
+      href="https://www.facebook.com/profile.php?id=61575551395089"
+      class="btn facebook"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fa-brands fa-facebook-f"></i>
+      Facebook
     </a>
 
-    <a href="https://www.instagram.com/clipsismedia/"
-       class="btn instagram" target="_blank">
-       <i class="fa-brands fa-instagram"></i> Instagram
+    <a
+      href="https://www.instagram.com/clipsismedia/"
+      class="btn instagram"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fa-brands fa-instagram"></i>
+      Instagram
     </a>
   </section>
 
