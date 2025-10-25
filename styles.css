@@ -27,6 +27,10 @@ body {
    HERO PRINCIPAL (FONDO)
 --------------------------------*/
 #hero {
+  background: url('gal1.JPG') center/cover no-repeat black;
+}
+
+#hero {
   position: relative;
   height: 100vh;
   background-image: image-set(
