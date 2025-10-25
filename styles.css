@@ -29,8 +29,9 @@ body {
 #hero {
   position: relative;
   height: 100vh;
-  background: url('gal1.jpg') center/cover no-repeat
-  display: flex;
+  background-image: image-set(
+  url('gal1-low.jpg') 1x,
+  url('gal1.JPG') 2x
   align-items: center;
   justify-content: center;
   text-align: center;
