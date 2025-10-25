@@ -27,7 +27,7 @@ body {
    HERO PRINCIPAL (FONDO)
 --------------------------------*/
 #hero {
-  background: url('gal1.JPG') center/cover no-repeat black;
+  background: url('gal1.jpg') center/cover no-repeat;
 }
 
 #hero {
@@ -35,7 +35,7 @@ body {
   height: 100vh;
   background-image: image-set(
   url('gal1-low.jpg') 1x,
-  url('gal1.JPG') 2x
+  url('gal1.jpg') 2x
   align-items: center;
   justify-content: center;
   text-align: center;
